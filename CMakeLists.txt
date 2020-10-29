@@ -10,3 +10,6 @@ target_link_libraries(07_maximizeit CGAL::CGAL)
 
 add_executable(07_diet src/week7/diet.cpp)
 target_link_libraries(07_diet CGAL::CGAL)
+
+add_executable(07_radiation src/week7/radiation.cpp)
+target_link_libraries(07_radiation CGAL::CGAL)
