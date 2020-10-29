@@ -27,10 +27,6 @@ void solve(int n, int m) {
             cin >> c[j][i];
         }
     }
-    
-    const int x = 0;
-    const int y = 1;
-    const int z = 2;
 
     Program lp = Program(CGAL::SMALLER, true, 0, false, 0);
 
@@ -59,7 +55,7 @@ void solve(int n, int m) {
 
 int main() {
     int n, m;
-    while (cin >> n) {
+    while (cin >> n && n > 0) {
         cin >> m;
         solve(n, m);
     }

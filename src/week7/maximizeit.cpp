@@ -63,7 +63,7 @@ void solve(int p) {
 
 int main() {
     int p;
-    while (cin >> p) {
+    while (cin >> p && p != 0) {
         solve(p);
     }
     return 0;
