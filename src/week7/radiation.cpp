@@ -1,8 +1,10 @@
+
 #include <iostream>
 
 #include <CGAL/QP_models.h>
 #include <CGAL/QP_functions.h>
 #include <CGAL/Gmpz.h>
+#include <CGAL/Gmpzf.h>
 #include <CGAL/Gmpq.h>
 
 typedef CGAL::Gmpz IT; // input type
@@ -20,20 +22,20 @@ struct point {
 };
 
 vector<IT> coefficients(point &p, int d) {
-    auto x = IT(p.x);
-    auto y = IT(p.y);
-    auto z = IT(p.z);
+    auto x = p.x;
+    auto y = p.y;
+    auto z = p.z;
     vector<IT> coeff;
     IT powerX = 1;
     for (int i = 0; i <= d; ++i) {
-        IT powerY = 1;
+        IT powerXY = powerX;
         for (int j = 0; j <= d - i; ++j) {
-            IT powerZ = 1;
+            IT powerXYZ = powerXY;
             for (int k = 0; k <= d - i - j; ++k) {
-                coeff.push_back(powerX * powerY * powerZ);
-                powerZ *= z;
+                coeff.push_back(powerXYZ);
+                powerXYZ *= z;
             }
-            powerY *= y;
+            powerXY *= y;
         }
         powerX *= x;   
     }
@@ -43,8 +45,8 @@ vector<IT> coefficients(point &p, int d) {
 bool isFeasible( vector<point> &A,  vector<point> &B, int d) {
     Program lp = Program(CGAL::SMALLER, false, 0, false, 0);
 
-    auto h = A.size();
-    auto t = B.size();
+    int h = A.size();
+    int t = B.size();
 
     const int epsilon = 0;
 
@@ -68,8 +70,11 @@ bool isFeasible( vector<point> &A,  vector<point> &B, int d) {
 
     // maximize epsilon <=> minimize -epsilon
     lp.set_c(epsilon, -1);
+    
+    CGAL::Quadratic_program_options options;
+    options.set_pricing_strategy(CGAL::QP_BLAND);
 
-    Solution s = CGAL::solve_linear_program(lp, ET());
+    Solution s = CGAL::solve_linear_program(lp, ET(), options);
 
     if (s.is_infeasible()) {
         return false;
@@ -91,39 +96,21 @@ void solve() {
 
     int x, y, z;
     for (int i = 0; i < h; ++i) {
-        cin >> x;
-        cin >> y;
-        cin >> z;
-        A[i] = point({x, y, z});
+        cin >> x >> y >> z;
+        A[i] = {x, y, z};
     }
     for (int i = 0; i < t; ++i) {
-        cin >> x;
-        cin >> y;
-        cin >> z;
-        B[i] = point({x, y, z});
+        cin >> x >> y >> z;
+        B[i] = {x, y, z};
     }
-
-    // Binary search for d
-    int a = 0;
-    int b = 30;
-
-    int minD = -1;
-    while (a <= b) {
-        int d = (a + b + 1) / 2;
-        if (!isFeasible(A, B, d)) {
-            a = d + 1;
-        }
-        else {
-            minD = d;
-            b = d - 1;
-        }
+    
+    for (int d = 0; d <= 30; ++d) {
+      if (isFeasible(A, B, d)) {
+        cout << d << endl;
+        return;
+      }
     }
-    if (minD == -1) {
-        cout << "Impossible!" << endl;
-    }
-    else {
-        cout << minD << endl;
-    }
+    cout << "Impossible!" << endl;
 }
 
 int main() {
