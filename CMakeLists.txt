@@ -16,3 +16,5 @@ target_link_libraries(07_inball CGAL::CGAL)
 
 add_executable(07_radiation src/week7/radiation.cpp)
 target_link_libraries(07_radiation CGAL::CGAL)
+
+add_executable(pow_07_surveillance src/pow/pow07_surveillance.cpp)
