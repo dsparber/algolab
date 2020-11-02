@@ -17,4 +17,12 @@ target_link_libraries(07_inball CGAL::CGAL)
 add_executable(07_radiation src/week7/radiation.cpp)
 target_link_libraries(07_radiation CGAL::CGAL)
 
-add_executable(pow_07_surveillance src/pow/pow07_surveillance.cpp)
+add_executable(pow02_deck_of_cards src/pow/pow02_deck_of_cards.cpp)
+add_executable(pow03_russia src/pow/pow03_russia_official_solution.cpp)
+add_executable(pow04_defensive_line src/pow/pow04_defensive_line.cpp)
+add_executable(pow05_motorcycles src/pow/pow05_motorcycles.cpp)
+add_executable(pow06_tracking src/pow/pow06_tracking.cpp)
+add_executable(pow07_octopussy src/pow/pow07_octopussy.cpp)
+add_executable(pow08_surveillance src/pow/pow08_surveillance.cpp)
+
+target_link_libraries(pow05_motorcycles CGAL::CGAL)
