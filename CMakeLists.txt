@@ -5,17 +5,24 @@ set(CMAKE_CXX_STANDARD 14)
 
 find_package(CGAL)
 
+
 add_executable(07_maximizeit src/week7/maximizeit.cpp)
-target_link_libraries(07_maximizeit CGAL::CGAL)
-
 add_executable(07_diet src/week7/diet.cpp)
-target_link_libraries(07_diet CGAL::CGAL)
-
 add_executable(07_inball src/week7/inball.cpp)
-target_link_libraries(07_inball CGAL::CGAL)
-
 add_executable(07_radiation src/week7/radiation.cpp)
+
+target_link_libraries(07_maximizeit CGAL::CGAL)
+target_link_libraries(07_diet CGAL::CGAL)
+target_link_libraries(07_inball CGAL::CGAL)
 target_link_libraries(07_radiation CGAL::CGAL)
+
+
+add_executable(08_bistro src/week8/bistro.cpp)
+add_executable(08_germs src/week8/germs.cpp)
+
+target_link_libraries(08_bistro CGAL::CGAL)
+target_link_libraries(08_germs CGAL::CGAL)
+
 
 add_executable(pow02_deck_of_cards src/pow/pow02_deck_of_cards.cpp)
 add_executable(pow03_russia src/pow/pow03_russia_official_solution.cpp)
