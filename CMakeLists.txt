@@ -19,9 +19,11 @@ target_link_libraries(07_radiation CGAL::CGAL)
 
 add_executable(08_bistro src/week8/bistro.cpp)
 add_executable(08_germs src/week8/germs.cpp)
+add_executable(08_h1n1 src/week8/h1n1.cpp)
 
 target_link_libraries(08_bistro CGAL::CGAL)
 target_link_libraries(08_germs CGAL::CGAL)
+target_link_libraries(08_h1n1 CGAL::CGAL)
 
 
 add_executable(pow02_deck_of_cards src/pow/pow02_deck_of_cards.cpp)
