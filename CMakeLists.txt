@@ -35,5 +35,7 @@ add_executable(pow05_motorcycles src/pow/pow05_motorcycles.cpp)
 add_executable(pow06_tracking src/pow/pow06_tracking.cpp)
 add_executable(pow07_octopussy src/pow/pow07_octopussy.cpp)
 add_executable(pow08_surveillance src/pow/pow08_surveillance.cpp)
+add_executable(pow09_legions src/pow/pow09_legions.cpp)
 
 target_link_libraries(pow05_motorcycles CGAL::CGAL)
+target_link_libraries(pow09_legions CGAL::CGAL)
