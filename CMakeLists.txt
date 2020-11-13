@@ -29,8 +29,9 @@ target_link_libraries(08_clues CGAL::CGAL)
 
 
 add_executable(09_real_estate src/week9/real_estate.cpp)
-
+add_executable(09_placing_knights src/week9/placing_knights.cpp)
 add_executable(09_algocoon src/week9/algocoon.cpp)
+add_executable(09_casino src/week9/casino.cpp)
 
 
 add_executable(pow02_deck_of_cards src/pow/pow02_deck_of_cards.cpp)
