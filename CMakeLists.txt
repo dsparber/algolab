@@ -34,6 +34,9 @@ add_executable(09_algocoon src/week9/algocoon.cpp)
 add_executable(09_casino src/week9/casino.cpp)
 
 
+add_executable(10_chariot_race src/week10/chariot_race.cpp)
+
+
 add_executable(pow02_deck_of_cards src/pow/pow02_deck_of_cards.cpp)
 add_executable(pow03_russia src/pow/pow03_russia_official_solution.cpp)
 add_executable(pow04_defensive_line src/pow/pow04_defensive_line.cpp)
