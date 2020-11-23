@@ -35,6 +35,7 @@ add_executable(09_casino src/week9/casino.cpp)
 
 
 add_executable(10_chariot_race src/week10/chariot_race.cpp)
+add_executable(10_switzerland src/week10/switzerland.cpp)
 add_executable(10_new_york src/week10/new_york.cpp)
 add_executable(10_worldcup src/week10/worldcup.cpp)
 
@@ -50,6 +51,7 @@ add_executable(pow07_octopussy src/pow/pow07_octopussy.cpp)
 add_executable(pow08_surveillance src/pow/pow08_surveillance.cpp)
 add_executable(pow09_legions src/pow/pow09_legions.cpp)
 add_executable(pow10_idefix src/pow/pow10_idefix.cpp)
+add_executable(pow11_fleetrace src/pow/pow11_fleetrace.cpp)
 
 target_link_libraries(pow05_motorcycles CGAL::CGAL)
 target_link_libraries(pow09_legions CGAL::CGAL)
