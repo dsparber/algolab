@@ -53,3 +53,7 @@ make -j8
 - SPShortest Path
 - SW: Sliding Window
 - UF: Union Find
+
+## Official Solutions
+
+For some problems, an [official solutions](official_solutions) was released. You can find them in this repository as well.
