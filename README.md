@@ -40,6 +40,7 @@ make -j8
 | [Switzerland](tasks/switzerland.pdf)                  | [switzerland.cpp](src/switzerland.cpp)                | 100   | Week 10   | MF            |
 | [Fleet Race](tasks/fleetrace.pdf)                     | [fleetrace.cpp](src/fleetrace.cpp)                    | 100   | Week 11   | Min Cost MF   |
 | [Return of the Jedi](tasks/return_of_the_jedi.pdf)    | [return_of_the_jedi.cpp](src/return_of_the_jedi.cpp)  | 100   | Week 11   | 2nd best MST  |
+| [Lestrade](tasks/lestrade.pdf)                        | [lestrade.cpp](src/lestrade.cpp)                      | 100   | Week 11   | LP & DT       |
 
 ### Legend
 - 2C: 2-Coloring / Bipartition
