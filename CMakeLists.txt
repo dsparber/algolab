@@ -41,6 +41,8 @@ add_executable(worldcup src/worldcup.cpp)
 
 target_link_libraries(worldcup CGAL::CGAL)
 
+add_executable(return_of_the_jedi src/return_of_the_jedi.cpp)
+
 
 add_executable(deck_of_cards src/deck_of_cards.cpp)
 add_executable(russia src/russia_official_solution.cpp)
