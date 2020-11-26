@@ -37,7 +37,7 @@ make -j8
 | [Chariot Race](tasks/chariot_race.pdf)        | [chariot_race.cpp](src/chariot_race.cpp)          | 100   | Week 10   | DP-like       |
 | [New York](tasks/new_york.pdf)                | [new_york.cpp](src/new_york.cpp)                  | 100   | Week 10   | SW over tree  |
 | [Worldcup](tasks/worldcup.pdf)                | [worldcup.cpp](src/worldcup.cpp)                  | 100   | Week 10   | LP & DT       |
-| [Switzerland](tasks/switzerland.pdf)          | [switzerland.cpp](src/switzerland.cpp)            | 40    | Week 10   | CC?           |
+| [Switzerland](tasks/switzerland.pdf)          | [switzerland.cpp](src/switzerland.cpp)            | 100   | Week 10   | MF            |
 | [Fleet Race](tasks/fleetrace.pdf)             | [fleetrace.cpp](src/fleetrace.cpp)                | 100   | Week 11   | Min Cost MF   |
 
 ### Legend

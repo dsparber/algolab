@@ -1,101 +1,83 @@
 #include <iostream>
+#include <algorithm>
 #include <vector>
-#include <set>
-#include <cmath>
-#include <limits>
-
-#include <boost/graph/topological_sort.hpp>
+#include <queue>
 #include <boost/graph/adjacency_list.hpp>
-#include <boost/graph/strong_components.hpp>
-#include <boost/graph/graphviz.hpp>
-#include <boost/graph/connected_components.hpp>
+#include <boost/graph/push_relabel_max_flow.hpp>
+#include <boost/tuple/tuple.hpp>
 
-typedef boost::adjacency_list<boost::vecS, boost::vecS, boost::directedS,
-  boost::no_property, boost::property<boost::edge_weight_t, int>> graph;
-typedef boost::graph_traits<graph>::vertex_descriptor vertex_desc;
-typedef boost::graph_traits<graph>::vertex_descriptor edge_desc;
-typedef boost::graph_traits<graph>::edge_iterator edge_it;
-typedef boost::graph_traits<graph>::out_edge_iterator out_edge_it;
-typedef boost::property_map<graph, boost::edge_weight_t>::type weight_map;
+typedef  boost::adjacency_list_traits<boost::vecS, boost::vecS, boost::directedS> traits;
+typedef boost::adjacency_list<boost::vecS, boost::vecS, boost::directedS, boost::no_property,
+  boost::property<boost::edge_capacity_t, long,
+    boost::property<boost::edge_residual_capacity_t, long,
+      boost::property<boost::edge_reverse_t, traits::edge_descriptor> > > >  graph;
+typedef  boost::graph_traits<graph>::edge_descriptor      edge_desc;
+typedef  boost::graph_traits<graph>::out_edge_iterator      out_edge_it;
+
+
+class edge_adder {
+ graph &G;
+
+ public:
+  explicit edge_adder(graph &G) : G(G) {}
+
+  void add_edge(int from, int to, long capacity) {
+    auto c_map = boost::get(boost::edge_capacity, G);
+    auto r_map = boost::get(boost::edge_reverse, G);
+    const edge_desc e = boost::add_edge(from, to, G).first;
+    const edge_desc rev_e = boost::add_edge(to, from, G).first;
+    c_map[e] = capacity;
+    c_map[rev_e] = 0; // reverse edge has no capacity!
+    r_map[e] = rev_e;
+    r_map[rev_e] = e;
+  }
+};
 
 using namespace std;
 
-struct edge {
-  int vertex;
-  int debt;
-};
-
+// Modeling it as a flow problem. 
+// The source connects to all vertices with a positive balance, all other vertices connect to the sink.
+// Since an unions total value needs to be strictly greater than zero, we know there needs to be at 
+// least one province that does not need its full balance to support it. I no such province exists, 
+// there can not be an union. If there is a province that does not need its full balance, the flow is 
+// less than the sum of positive balances
 void solve() {
   int n, m;
   cin >> n >> m;
   
-  vector<int> b(n);
+  // Set up the graph
+  graph G(n);
+  edge_adder adder(G);
+  auto rc_map = boost::get(boost::edge_residual_capacity, G);
+  
+  auto source = boost::add_vertex(G);
+  auto target = boost::add_vertex(G);
+  
+  // Connect all provinces to source/target depending on balance
+  int sumPositive = 0;
+  int b;
   for (int i = 0; i < n; ++i) {
-    cin >> b[i];
+    cin >> b;
+    if (b > 0) {
+      sumPositive += b;
+      adder.add_edge(source, i, b);
+    }
+    else {
+      adder.add_edge(i, target, -b);
+    }
   }
   
-  graph G(n);
-
+  // Connect provinces
   int u, v, d;
   for (int i = 0; i < m; ++i) {
     cin >> u >> v >> d;
-    boost::add_edge(u, v, d, G);
+    adder.add_edge(u, v, d);
   }
   
-  
-  std::vector<int> component_map(n);
-  int ncc = boost::strong_components(G, boost::make_iterator_property_map(component_map.begin(), boost::get(boost::vertex_index, G))); 
-  
-  
-  vector<int> componentValue(ncc, 0);
-  for (int i = 0; i < n; ++i) {
-    int component = component_map[i];
-    componentValue[component] += b[i];
-  }
 
-  graph C(ncc);
-  edge_it e, end;
-  map<tuple<int, int>, int> edges;
-  for (boost::tie(e, end) = boost::edges(G); e != end; ++e) {
-    u = component_map[boost::source(*e, G)];
-    v = component_map[boost::target(*e, G)];
-    if (u != v) {
-      edges[{u, v}] += boost::get(boost::edge_weight, C)[*e];
-    }
-  }
-  for (auto edge : edges) {
-    tuple<int, int> uv;
-    tie(uv, d) = edge; 
-    tie(u, v) = uv;
-    boost::add_edge(u, v, d, C);
-  }
-  
-  vector<int> topo;
-  boost::topological_sort(C, std::back_inserter(topo));
-  
-  bool debug = false;
-  
-  for (int u : topo) {
-    if (debug) cout << "out-edges of " << u << ": ";
-    out_edge_it e, end;
-    int value = componentValue[u];
-    for (boost::tie(e, end) = boost::out_edges(u, C); e != end; ++e) {
-      int v = boost::target(*e, C);
-      int debt = boost::get(boost::edge_weight, C)[*e];
-      value += max(-debt, componentValue[v]);
-      if (debug) cout << v << ", d = " << debt << "\t";
-    }
-    if (debug) cout << endl;
-    if (debug) cout << "Value of " << u << ": " << value << endl;
-    if (value > 0) {
-      cout << "yes" << endl;
-      return;
-    }
-    
-  }
-  
-  
-  cout << "no" << endl;
+  // Compute flow & output
+  int flow = boost::push_relabel_max_flow(G, source, target);
+  cout << (flow < sumPositive ? "yes" : "no") << endl;
 }
 
 int main() {
