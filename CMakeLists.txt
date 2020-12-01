@@ -56,6 +56,7 @@ add_executable(surveillance src/surveillance.cpp)
 add_executable(legions src/legions.cpp)
 add_executable(idefix src/idefix.cpp)
 add_executable(fleetrace src/fleetrace.cpp)
+add_executable(iron_islands src/iron_islands.cpp)
 
 target_link_libraries(motorcycles CGAL::CGAL)
 target_link_libraries(legions CGAL::CGAL)
