@@ -44,6 +44,10 @@ target_link_libraries(worldcup CGAL::CGAL)
 add_executable(return_of_the_jedi src/return_of_the_jedi.cpp)
 add_executable(lestrade src/lestrade.cpp)
 
+
+add_executable(moving_books src/moving_books.cpp)
+
+
 target_link_libraries(lestrade CGAL::CGAL)
 
 add_executable(deck_of_cards src/deck_of_cards.cpp)
