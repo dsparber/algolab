@@ -41,7 +41,7 @@ make -j8
 | [Fleet Race](tasks/fleetrace.pdf)                     | [fleetrace.cpp](src/fleetrace.cpp)                    | 100       | Week 11   | Min Cost MF   |
 | [Return of the Jedi](tasks/return_of_the_jedi.pdf)    | [return_of_the_jedi.cpp](src/return_of_the_jedi.cpp)  | 100       | Week 11   | 2nd best MST  |
 | [Lestrade](tasks/lestrade.pdf)                        | [lestrade.cpp](src/lestrade.cpp)                      | 100       | Week 11   | LP & DT       |
-| [Hand](tasks/hand.pdf)                                | ---                                                   | ---       | Week 11   | DT, UF        |
+| [Hand](tasks/hand.pdf)                                | [hand.cpp](src/hand.cpp)                              | 80 (WA)   | Week 11   | DT, UF        |
 | [Meereen](tasks/meereen.pdf)                          | ---                                                   | ---       | Week 11   | ---           |
 | [Iron Islands](tasks/iron_islands.pdf)                | [iron_islands.cpp](src/iron_islands.cpp)              | 50 (TLE)  | Week 12   | SW?           |
 | [Car Sharing](tasks/carsharing.pdf)                   | ---                                                   | ---       | Week 12   | ---           |
