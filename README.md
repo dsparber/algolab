@@ -48,10 +48,12 @@ make -j8
 | [Hong Kong](tasks/hongkong.pdf)                       | ---                                                   | ---       | Week 12   | ---           |
 | [India](tasks/india.pdf)                              | ---                                                   | ---       | Week 12   | ---           |
 | [Moving Books](tasks/moving_books.pdf)                | [moving_books.cpp](src/moving_books.cpp)              | 100       | Week 12   | Greedy        |
+| [Lannister](tasks/lannister.pdf)                      | ---                                                   | ---       | Week 13   | LP            |
 | [Evolution](tasks/evolution.pdf)                      | [evolution.cpp](src/evolution.cpp)                    | 100       | Week 13   | DFS & BS      |
 | [Marathon](tasks/marathon.pdf)                        | [marathon.cpp](src/marathon.cpp)                      | 100       | Week 13   | SP & MF       |
-| [Punch](tasks/punch.pdf)                              | [punch.cpp](src/punch.cpp)                            | 100       | Week 13   | DP           |
+| [Punch](tasks/punch.pdf)                              | [punch.cpp](src/punch.cpp)                            | 100       | Week 13   | DP            |
 | [Sith](tasks/sith.pdf)                                | ---                                                   | ---       | Week 13   | ---           |
+| [Secret Service](tasks/secret_service.pdf)            | ---                                                   | ---       | Week 14   | ---           |
 
 
 ### Legend
