@@ -49,6 +49,9 @@ add_executable(hand src/hand.cpp)
 add_executable(moving_books src/moving_books.cpp)
 
 
+add_executable(evolution src/evolution.cpp)
+
+
 target_link_libraries(lestrade CGAL::CGAL)
 
 add_executable(deck_of_cards src/deck_of_cards.cpp)
