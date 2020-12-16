@@ -45,6 +45,9 @@ add_executable(return_of_the_jedi src/return_of_the_jedi.cpp)
 add_executable(lestrade src/lestrade.cpp)
 add_executable(hand src/hand.cpp)
 
+target_link_libraries(lestrade CGAL::CGAL)
+
+
 
 add_executable(moving_books src/moving_books.cpp)
 
@@ -52,9 +55,9 @@ add_executable(moving_books src/moving_books.cpp)
 add_executable(evolution src/evolution.cpp)
 add_executable(marathon src/marathon.cpp)
 add_executable(punch src/punch.cpp)
+add_executable(sith src/sith.cpp)
 
-
-target_link_libraries(lestrade CGAL::CGAL)
+target_link_libraries(sith CGAL::CGAL)
 
 add_executable(deck_of_cards src/deck_of_cards.cpp)
 add_executable(russia src/russia_official_solution.cpp)

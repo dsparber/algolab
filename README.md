@@ -52,7 +52,7 @@ make -j8
 | [Evolution](tasks/evolution.pdf)                      | [evolution.cpp](src/evolution.cpp)                    | 100       | Week 13   | DFS & BS      |
 | [Marathon](tasks/marathon.pdf)                        | [marathon.cpp](src/marathon.cpp)                      | 100       | Week 13   | SP & MF       |
 | [Punch](tasks/punch.pdf)                              | [punch.cpp](src/punch.cpp)                            | 100       | Week 13   | DP            |
-| [Sith](tasks/sith.pdf)                                | ---                                                   | ---       | Week 13   | ---           |
+| [Sith](tasks/sith.pdf)                                | [sith.cpp](src/sith.cpp)                              | 100       | Week 13   | DT & BS       |
 | [Secret Service](tasks/secret_service.pdf)            | ---                                                   | ---       | Week 14   | ---           |
 
 
