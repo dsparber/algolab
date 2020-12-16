@@ -49,7 +49,7 @@ make -j8
 | [India](tasks/india.pdf)                              | ---                                                   | ---       | Week 12   | ---           |
 | [Moving Books](tasks/moving_books.pdf)                | [moving_books.cpp](src/moving_books.cpp)              | 100       | Week 12   | Greedy        |
 | [Evolution](tasks/evolution.pdf)                      | [evolution.cpp](src/evolution.cpp)                    | 100       | Week 13   | DFS & BS      |
-| [Marathon](tasks/marathon.pdf)                        | ---                                                   | ---       | Week 13   | ---           |
+| [Marathon](tasks/marathon.pdf)                        | [marathon.cpp](src/marathon.cpp)                      | 100       | Week 13   | SP & MF       |
 | [Punch](tasks/punch.pdf)                              | ---                                                   | ---       | Week 13   | ---           |
 | [Sith](tasks/sith.pdf)                                | ---                                                   | ---       | Week 13   | ---           |
 
@@ -66,7 +66,7 @@ make -j8
 - MC: Min. Cut
 - MF: Max. Flow
 - MST: Minimum Spanning Tree
-- SPShortest Path
+- SP: Shortest Path
 - SW: Sliding Window
 - UF: Union Find
 

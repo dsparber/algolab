@@ -50,6 +50,7 @@ add_executable(moving_books src/moving_books.cpp)
 
 
 add_executable(evolution src/evolution.cpp)
+add_executable(marathon src/marathon.cpp)
 
 
 target_link_libraries(lestrade CGAL::CGAL)
