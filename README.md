@@ -44,7 +44,7 @@ make -j8
 | [Hand](tasks/hand.pdf)                                | [hand.cpp](src/hand.cpp)                              | 80 (WA)   | Week 11   | DT, UF        |
 | [Meereen](tasks/meereen.pdf)                          | ---                                                   | ---       | Week 11   | ---           |
 | [Iron Islands](tasks/iron_islands.pdf)                | [iron_islands.cpp](src/iron_islands.cpp)              | 50 (TLE)  | Week 12   | SW?           |
-| [Car Sharing](tasks/carsharing.pdf)                   | ---                                                   | ---       | Week 12   | ---           |
+| [Car Sharing](tasks/carsharing.pdf)                   | [carsharing.cpp](src/carsharing.cpp)                  | 100       | Week 12   | Min Cost MF   |
 | [Hong Kong](tasks/hongkong.pdf)                       | ---                                                   | ---       | Week 12   | ---           |
 | [India](tasks/india.pdf)                              | ---                                                   | ---       | Week 12   | ---           |
 | [Moving Books](tasks/moving_books.pdf)                | [moving_books.cpp](src/moving_books.cpp)              | 100       | Week 12   | Greedy        |
