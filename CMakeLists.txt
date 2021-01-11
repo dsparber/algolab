@@ -5,7 +5,14 @@ set(CMAKE_CXX_STANDARD 14)
 
 find_package(CGAL)
 
+# Week 1
+add_executable(build_the_sum src/build_the_sum.cpp)
+add_executable(dominoes src/dominoes.cpp)
+add_executable(even_pairs src/even_pairs.cpp)
+add_executable(even_matrices src/even_matrices.cpp)
 
+
+# Week 7
 add_executable(maximizeit src/maximizeit.cpp)
 add_executable(diet src/diet.cpp)
 add_executable(inball src/inball.cpp)
@@ -17,6 +24,7 @@ target_link_libraries(inball CGAL::CGAL)
 target_link_libraries(radiation CGAL::CGAL)
 
 
+# Week 8
 add_executable(bistro src/bistro.cpp)
 add_executable(germs src/germs.cpp)
 add_executable(h1n1 src/h1n1.cpp)
@@ -28,12 +36,14 @@ target_link_libraries(h1n1 CGAL::CGAL)
 target_link_libraries(clues CGAL::CGAL)
 
 
+# Week 9
 add_executable(real_estate src/real_estate.cpp)
 add_executable(placing_knights src/placing_knights.cpp)
 add_executable(algocoon src/algocoon.cpp)
 add_executable(casino src/casino.cpp)
 
 
+# Week 10
 add_executable(chariot_race src/chariot_race.cpp)
 add_executable(switzerland src/switzerland.cpp)
 add_executable(new_york src/new_york.cpp)
@@ -41,6 +51,8 @@ add_executable(worldcup src/worldcup.cpp)
 
 target_link_libraries(worldcup CGAL::CGAL)
 
+
+# Week 11
 add_executable(return_of_the_jedi src/return_of_the_jedi.cpp)
 add_executable(lestrade src/lestrade.cpp)
 add_executable(hand src/hand.cpp)
@@ -48,11 +60,12 @@ add_executable(hand src/hand.cpp)
 target_link_libraries(lestrade CGAL::CGAL)
 
 
-
+# Week 12
 add_executable(moving_books src/moving_books.cpp)
 add_executable(carsharing src/carsharing.cpp)
 
 
+# Week 13
 add_executable(evolution src/evolution.cpp)
 add_executable(marathon src/marathon.cpp)
 add_executable(punch src/punch.cpp)
@@ -60,6 +73,8 @@ add_executable(sith src/sith.cpp)
 
 target_link_libraries(sith CGAL::CGAL)
 
+
+# Problems of the week
 add_executable(deck_of_cards src/deck_of_cards.cpp)
 add_executable(russia src/russia_official_solution.cpp)
 add_executable(defensive_line src/defensive_line.cpp)

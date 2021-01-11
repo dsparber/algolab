@@ -13,6 +13,10 @@ make -j8
 
 | Task                                                  | Implementation                                        | Score     | Week      | Topics        | 
 | ----------------------------------------------------- | ----------------------------------------------------- | --------- | --------- | ------------- |
+| [Build the Sum](tasks/build_the_sum.pdf)              | [build_the_sum.cpp](src/build_the_sum.cpp)            | 100       | Week 1    | ---           |
+| [Dominoes](tasks/dominoes.pdf)                        | [dominoes.cpp](src/dominoes.cpp)                      | 100       | Week 1    | ---           |
+| [Even pairs](tasks/deck_of_cards.pdf)                 | [even_pairs.cpp](src/even_pairs.cpp)                  | 100       | Week 1    | ---           |
+| [Even Matrices](tasks/even_matrices.pdf)              | [even_matrices.cpp](src/even_matrices.cpp)            | 80 (TLE)  | Week 1    | ---           |
 | [Deck of Cards](tasks/deck_of_cards.pdf)              | [deck_of_cards.cpp](src/deck_of_cards.cpp)            | 100       | Week 2    | DP            |
 | [Russia](tasks/russia.pdf)                            | [russia.cpp](src/russia_official_solution.cpp)        | 100       | Week 3    | DP            |
 | [Defensive Line](tasks/defensive_line.pdf)            | [defensive_line.cpp](src/defensive_line.cpp)          | 100       | Week 4    | SW & DP       |
