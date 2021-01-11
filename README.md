@@ -57,7 +57,7 @@ make -j8
 | [Marathon](tasks/marathon.pdf)                        | [marathon.cpp](src/marathon.cpp)                      | 100       | Week 13   | SP & MF       |
 | [Punch](tasks/punch.pdf)                              | [punch.cpp](src/punch.cpp)                            | 100       | Week 13   | DP            |
 | [Sith](tasks/sith.pdf)                                | [sith.cpp](src/sith.cpp)                              | 100       | Week 13   | DT & BS       |
-| [Secret Service](tasks/secret_service.pdf)            | ---                                                   | ---       | Week 14   | ---           |
+| [Secret Service](tasks/secret_service.pdf)            | [secret_service.cpp](src/secret_service.cpp)          | 100       | Week 14   | BS & MF       |
 
 
 ### Legend
