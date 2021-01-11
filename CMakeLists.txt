@@ -70,6 +70,7 @@ target_link_libraries(lestrade CGAL::CGAL)
 # Week 12
 add_executable(moving_books src/moving_books.cpp)
 add_executable(carsharing src/carsharing.cpp)
+add_executable(india src/india.cpp)
 
 
 # Week 13

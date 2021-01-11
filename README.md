@@ -37,8 +37,8 @@ make -j8
 | [H1N1](tasks/h1n1.pdf)                                | [h1n1.cpp](src/h1n1.cpp)                              | 100       | Week 8    | DT, MST       | 
 | [Clues](tasks/clues.pdf)                              | [clues.cpp](src/clues.cpp)                            | 100       | Week 8    | DT, 2C, CC    | 
 | [Legions](tasks/legions.pdf)                          | [legions.cpp](src/legions.cpp)                        | 100       | Week 9    | LP            |
-| [Casino Royale](tasks/casino.pdf)                     | [casino.cpp](src/casino.cpp)                          | 100       | Week 9    | Min Cost MF   |
-| [Real Estate](tasks/real_estate.pdf)                  | [real_estate.cpp](src/real_estate.cpp)                | 100       | Week 9    | Min Cost MF   |
+| [Casino Royale](tasks/casino.pdf)                     | [casino.cpp](src/casino.cpp)                          | 100       | Week 9    | MCMF          |
+| [Real Estate](tasks/real_estate.pdf)                  | [real_estate.cpp](src/real_estate.cpp)                | 100       | Week 9    | MCMF          |
 | [Algocoon](tasks/algocoon.pdf)                        | [algocoon.cpp](src/algocoon.cpp)                      | 100       | Week 9    | MC            |
 | [Placing Knights](tasks/placing_knights.pdf)          | [placing_knights.cpp](src/placing_knights.cpp)        | 100       | Week 9    | MaxIS         |
 | [Idefix](tasks/idefix.pdf)                            | [idefix.cpp](src/idefix.cpp)                          | 100       | Week 10   | DT & UF       |
@@ -46,15 +46,15 @@ make -j8
 | [New York](tasks/new_york.pdf)                        | [new_york.cpp](src/new_york.cpp)                      | 100       | Week 10   | SW over tree  |
 | [Worldcup](tasks/worldcup.pdf)                        | [worldcup.cpp](src/worldcup.cpp)                      | 100       | Week 10   | LP & DT       |
 | [Switzerland](tasks/switzerland.pdf)                  | [switzerland.cpp](src/switzerland.cpp)                | 100       | Week 10   | MF            |
-| [Fleet Race](tasks/fleetrace.pdf)                     | [fleetrace.cpp](src/fleetrace.cpp)                    | 100       | Week 11   | Min Cost MF   |
+| [Fleet Race](tasks/fleetrace.pdf)                     | [fleetrace.cpp](src/fleetrace.cpp)                    | 100       | Week 11   | MCMF          |
 | [Return of the Jedi](tasks/return_of_the_jedi.pdf)    | [return_of_the_jedi.cpp](src/return_of_the_jedi.cpp)  | 100       | Week 11   | 2nd best MST  |
 | [Lestrade](tasks/lestrade.pdf)                        | [lestrade.cpp](src/lestrade.cpp)                      | 100       | Week 11   | LP & DT       |
 | [Hand](tasks/hand.pdf)                                | [hand.cpp](src/hand.cpp)                              | 80 (WA)   | Week 11   | DT, UF        |
 | [Meereen](tasks/meereen.pdf)                          | ---                                                   | ---       | Week 11   | ---           |
 | [Iron Islands](tasks/iron_islands.pdf)                | [iron_islands.cpp](src/iron_islands.cpp)              | 50 (TLE)  | Week 12   | SW?           |
-| [Car Sharing](tasks/carsharing.pdf)                   | [carsharing.cpp](src/carsharing.cpp)                  | 100       | Week 12   | Min Cost MF   |
+| [Car Sharing](tasks/carsharing.pdf)                   | [carsharing.cpp](src/carsharing.cpp)                  | 100       | Week 12   | MCMF          |
 | [Hong Kong](tasks/hongkong.pdf)                       | ---                                                   | ---       | Week 12   | ---           |
-| [India](tasks/india.pdf)                              | ---                                                   | ---       | Week 12   | ---           |
+| [India](tasks/india.pdf)                              | [india.cpp](src/india.cpp)                            | 100       | Week 12   | BS & MCMF     |
 | [Moving Books](tasks/moving_books.pdf)                | [moving_books.cpp](src/moving_books.cpp)              | 100       | Week 12   | Greedy        |
 | [Lannister](tasks/lannister.pdf)                      | ---                                                   | ---       | Week 13   | LP            |
 | [Evolution](tasks/evolution.pdf)                      | [evolution.cpp](src/evolution.cpp)                    | 100       | Week 13   | DFS & BS      |
@@ -74,6 +74,7 @@ make -j8
 - Geo: Geometric
 - LP: Linear Programming
 - MC: Min. Cut
+- MCMF: Min. Cost Max. Flow
 - MF: Max. Flow
 - MST: Minimum Spanning Tree
 - SP: Shortest Path
