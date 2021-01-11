@@ -12,6 +12,13 @@ add_executable(even_pairs src/even_pairs.cpp)
 add_executable(even_matrices src/even_matrices.cpp)
 
 
+# Week 2
+add_executable(burning_coins src/burning_coins.cpp)
+add_executable(the_great_game src/the_great_game.cpp)
+add_executable(beach_bars src/beach_bars.cpp)
+add_executable(search_snippets src/search_snippets.cpp)
+
+
 # Week 7
 add_executable(maximizeit src/maximizeit.cpp)
 add_executable(diet src/diet.cpp)

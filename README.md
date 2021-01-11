@@ -18,6 +18,10 @@ make -j8
 | [Even pairs](tasks/deck_of_cards.pdf)                 | [even_pairs.cpp](src/even_pairs.cpp)                  | 100       | Week 1    | ---           |
 | [Even Matrices](tasks/even_matrices.pdf)              | [even_matrices.cpp](src/even_matrices.cpp)            | 80 (TLE)  | Week 1    | ---           |
 | [Deck of Cards](tasks/deck_of_cards.pdf)              | [deck_of_cards.cpp](src/deck_of_cards.cpp)            | 100       | Week 2    | DP            |
+| [Burning Coins](tasks/burning_coins.pdf)              | [burning_coins.cpp](src/burning_coins.cpp)            | 100       | Week 2    | DP            |
+| [The Great Game](tasks/the_great_game.pdf)            | [the_great_game.cpp](src/the_great_game.cpp)          | 75 (TLE)  | Week 2    | DP            |
+| [Beach Bars](tasks/beach_bars.pdf)                    | [beach_bars.cpp](src/beach_bars.cpp)                  | 100       | Week 2    | SW            |
+| [Search Snippets](tasks/search_snippets.pdf)          | [search_snippets.cpp](src/search_snippets.cpp)        | 100       | Week 2    | SW            |
 | [Russia](tasks/russia.pdf)                            | [russia.cpp](src/russia_official_solution.cpp)        | 100       | Week 3    | DP            |
 | [Defensive Line](tasks/defensive_line.pdf)            | [defensive_line.cpp](src/defensive_line.cpp)          | 100       | Week 4    | SW & DP       |
 | [Motorcycles](tasks/motorcycles.pdf)                  | [motorcycles.cpp](src/motorcycles.cpp)                | 50 (TLE)  | Week 5    | Geo           |
