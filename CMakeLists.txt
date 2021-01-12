@@ -94,6 +94,7 @@ add_executable(legions src/legions.cpp)
 add_executable(idefix src/idefix.cpp)
 add_executable(fleetrace src/fleetrace.cpp)
 add_executable(iron_islands src/iron_islands.cpp)
+add_executable(lannister src/lannister.cpp)
 add_executable(secret_service src/secret_service.cpp)
 
 target_link_libraries(motorcycles CGAL::CGAL)
