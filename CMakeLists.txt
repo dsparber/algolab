@@ -71,6 +71,9 @@ target_link_libraries(lestrade CGAL::CGAL)
 add_executable(moving_books src/moving_books.cpp)
 add_executable(carsharing src/carsharing.cpp)
 add_executable(india src/india.cpp)
+add_executable(hongkong src/hongkong.cpp)
+
+target_link_libraries(hongkong CGAL::CGAL)
 
 
 # Week 13
