@@ -23,6 +23,10 @@ make -j8
 | [Beach Bars](tasks/beach_bars.pdf)                    | [beach_bars.cpp](src/beach_bars.cpp)                  | 100       | Week 2    | SW            |
 | [Search Snippets](tasks/search_snippets.pdf)          | [search_snippets.cpp](src/search_snippets.cpp)        | 100       | Week 2    | SW            |
 | [Russia](tasks/russia.pdf)                            | [russia.cpp](src/russia_official_solution.cpp)        | 100       | Week 3*   | DP            |
+| [Hit](tasks/hit.pdf)                                  | [hit.cpp](src/hit.cpp)                                | 100       | Week 3    | Geo           |
+| [First Hit](tasks/first_hit.pdf)                      | [first_hit.cpp](src/first_hit.cpp)                    | 90 (TLE)  | Week 3    | Geo           |
+| [Antenna](tasks/antenna.pdf)                          | [antenna.cpp](src/antenna.cpp)                        | 100       | Week 3    | Geo           |
+| [Hiking Maps](tasks/hiking_maps.pdf)                  | [hiking_maps.cpp](src/hiking_maps.cpp)                | 100       | Week 3    | Geo           |
 | [Defensive Line](tasks/defensive_line.pdf)            | [defensive_line.cpp](src/defensive_line.cpp)          | 100       | Week 4*   | SW & DP       |
 | [Motorcycles](tasks/motorcycles.pdf)                  | [motorcycles.cpp](src/motorcycles.cpp)                | 100       | Week 5*   | Geo           |
 | [Tracking](tasks/tracking.pdf)                        | [tracking.cpp](src/tracking.cpp)                      | 100       | Week 6*   | SP            |

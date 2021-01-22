@@ -19,6 +19,13 @@ add_executable(beach_bars src/beach_bars.cpp)
 add_executable(search_snippets src/search_snippets.cpp)
 
 
+# Week 3
+add_executable(hit src/hit.cpp)
+add_executable(first_hit src/first_hit.cpp)
+add_executable(antenna src/antenna.cpp)
+add_executable(hiking_maps src/hiking_maps.cpp)
+
+
 # Week 7
 add_executable(maximizeit src/maximizeit.cpp)
 add_executable(diet src/diet.cpp)
