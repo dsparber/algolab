@@ -24,7 +24,7 @@ make -j8
 | [Search Snippets](tasks/search_snippets.pdf)          | [search_snippets.cpp](src/search_snippets.cpp)        | 100       | Week 2    | SW            |
 | [Russia](tasks/russia.pdf)                            | [russia.cpp](src/russia_official_solution.cpp)        | 100       | Week 3*   | DP            |
 | [Defensive Line](tasks/defensive_line.pdf)            | [defensive_line.cpp](src/defensive_line.cpp)          | 100       | Week 4*   | SW & DP       |
-| [Motorcycles](tasks/motorcycles.pdf)                  | [motorcycles.cpp](src/motorcycles.cpp)                | 50 (TLE)  | Week 5*   | Geo           |
+| [Motorcycles](tasks/motorcycles.pdf)                  | [motorcycles.cpp](src/motorcycles.cpp)                | 100       | Week 5*   | Geo           |
 | [Tracking](tasks/tracking.pdf)                        | [tracking.cpp](src/tracking.cpp)                      | 100       | Week 6*   | SP            |
 | [Octopussy](tasks/octopussy.pdf)                      | [octopussy.cpp](src/octopussy.cpp)                    | 100       | Week 7*   | DP-like       |
 | [Maximize it](tasks/maximizeit.pdf)                   | [maximizeit.cpp](src/maximizeit.cpp)                  | 100       | Week 7    | LP            | 
