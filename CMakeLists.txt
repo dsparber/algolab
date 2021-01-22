@@ -37,6 +37,7 @@ add_executable(hiking_maps src/hiking_maps.cpp)
 add_executable(attack_of_the_clones src/attack_of_the_clones.cpp)
 add_executable(san_francisco src/san_francisco.cpp)
 add_executable(boats src/boats.cpp)
+add_executable(asterix_the_gaul src/asterix_the_gaul.cpp)
 
 
 # Week 7
