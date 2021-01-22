@@ -28,6 +28,10 @@ make -j8
 | [Antenna](tasks/antenna.pdf)                          | [antenna.cpp](src/antenna.cpp)                        | 100       | Week 3    | Geo           |
 | [Hiking Maps](tasks/hiking_maps.pdf)                  | [hiking_maps.cpp](src/hiking_maps.cpp)                | 100       | Week 3    | Geo           |
 | [Defensive Line](tasks/defensive_line.pdf)            | [defensive_line.cpp](src/defensive_line.cpp)          | 100       | Week 4*   | SW & DP       |
+| [First Steps with BGL](tasks/first_steps.pdf)         | [first_steps.cpp](src/first_steps.cpp)                | 100       | Week 4    | SP            |
+| [Ant Challenge](tasks/ant_challenge.pdf)              | [ant_challenge.cpp](src/ant_challenge.cpp)            | 100       | Week 4    | MST & SP      |
+| [Buddy Selection](tasks/buddy_selection.pdf)          | [buddy_selection.cpp](src/buddy_selection.cpp)        | 100       | Week 4    | MM            |
+| [Important Bridges](tasks/important_bridges.pdf)      | [important_bridges.cpp](src/important_bridges.cpp)    | 100       | Week 4    | 2CC           |
 | [Motorcycles](tasks/motorcycles.pdf)                  | [motorcycles.cpp](src/motorcycles.cpp)                | 100       | Week 5*   | Geo           |
 | [Tracking](tasks/tracking.pdf)                        | [tracking.cpp](src/tracking.cpp)                      | 100       | Week 6*   | SP            |
 | [Octopussy](tasks/octopussy.pdf)                      | [octopussy.cpp](src/octopussy.cpp)                    | 100       | Week 7*   | DP-like       |
@@ -71,6 +75,7 @@ make -j8
 ### Legend
 - *: This was a "Problem of the Week"
 - 2C: 2-Coloring / Bipartition
+- 2CC: 2-Connected Components / Biconnected Components
 - BS: Binary Search
 - CC: Connected Components
 - DFS: Depth First Search
@@ -81,6 +86,7 @@ make -j8
 - MC: Min. Cut
 - MCMF: Min. Cost Max. Flow
 - MF: Max. Flow
+- MM: Maximal Matching
 - MST: Minimum Spanning Tree
 - SP: Shortest Path
 - SW: Sliding Window

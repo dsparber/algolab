@@ -19,6 +19,13 @@ add_executable(beach_bars src/beach_bars.cpp)
 add_executable(search_snippets src/search_snippets.cpp)
 
 
+# Week 2
+add_executable(ant_challenge src/ant_challenge.cpp)
+add_executable(important_bridges src/important_bridges.cpp)
+add_executable(first_steps src/first_steps.cpp)
+add_executable(buddy_selection src/buddy_selection.cpp)
+
+
 # Week 3
 add_executable(hit src/hit.cpp)
 add_executable(first_hit src/first_hit.cpp)
