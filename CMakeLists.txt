@@ -63,6 +63,7 @@ target_link_libraries(worldcup CGAL::CGAL)
 add_executable(return_of_the_jedi src/return_of_the_jedi.cpp)
 add_executable(lestrade src/lestrade.cpp)
 add_executable(hand src/hand.cpp)
+add_executable(meereen src/meereen.cpp)
 
 target_link_libraries(lestrade CGAL::CGAL)
 
