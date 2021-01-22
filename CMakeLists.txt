@@ -33,6 +33,10 @@ add_executable(antenna src/antenna.cpp)
 add_executable(hiking_maps src/hiking_maps.cpp)
 
 
+# Week 4
+add_executable(attack_of_the_clones src/attack_of_the_clones.cpp)
+
+
 # Week 7
 add_executable(maximizeit src/maximizeit.cpp)
 add_executable(diet src/diet.cpp)
