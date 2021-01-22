@@ -33,7 +33,9 @@ make -j8
 | [Buddy Selection](tasks/buddy_selection.pdf)          | [buddy_selection.cpp](src/buddy_selection.cpp)        | 100       | Week 4    | MM            |
 | [Important Bridges](tasks/important_bridges.pdf)      | [important_bridges.cpp](src/important_bridges.cpp)    | 100       | Week 4    | 2CC           |
 | [Motorcycles](tasks/motorcycles.pdf)                  | [motorcycles.cpp](src/motorcycles.cpp)                | 100       | Week 5*   | Geo           |
+| [Boats](tasks/boats.pdf)                              | [boats.cpp](src/boats.cpp)                            | 100       | Week 5    | Greedy        |
 | [Attack of the Clones](tasks/attack_of_the_clones.pdf)| [attack_of_the_clones.cpp](src/attack_of_the_clones.cpp) | 100    | Week 5    | Greedy        |
+| [San Francisco](tasks/san_francisco.pdf)              | [san_francisco.cpp](src/san_francisco.cpp)            | 100       | Week 5    | DP            |
 | [Tracking](tasks/tracking.pdf)                        | [tracking.cpp](src/tracking.cpp)                      | 100       | Week 6*   | SP            |
 | [Octopussy](tasks/octopussy.pdf)                      | [octopussy.cpp](src/octopussy.cpp)                    | 100       | Week 7*   | DP-like       |
 | [Maximize it](tasks/maximizeit.pdf)                   | [maximizeit.cpp](src/maximizeit.cpp)                  | 100       | Week 7    | LP            | 
