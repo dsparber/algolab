@@ -13,7 +13,8 @@ make -j8
 
 | Task                                                  | Implementation                                            | Score     | Week      | Topics        | 
 | ----------------------------------------------------- | --------------------------------------------------------- | --------- | --------- | ------------- |
-| [Build the Sum](tasks/build_the_sum.pdf)              | [build_the_sum.cpp](src/build_the_sum.cpp)                | 100       | Week 1    | ---           |
+| [Build the Sum](task
+um.pdf)              | [build_the_sum.cpp](src/build_the_sum.cpp)                | 100       | Week 1    | ---           |
 | [Dominoes](tasks/dominoes.pdf)                        | [dominoes.cpp](src/dominoes.cpp)                          | 100       | Week 1    | ---           |
 | [Even pairs](tasks/deck_of_cards.pdf)                 | [even_pairs.cpp](src/even_pairs.cpp)                      | 100       | Week 1    | ---           |
 | [Even Matrices](tasks/even_matrices.pdf)              | [even_matrices.cpp](src/even_matrices.cpp)                | 80 (TLE)  | Week 1    | ---           |
@@ -67,7 +68,7 @@ make -j8
 | [Lestrade](tasks/lestrade.pdf)                        | [lestrade.cpp](src/lestrade.cpp)                          | 100       | Week 11   | LP & DT       |
 | [Hand](tasks/hand.pdf)                                | [hand.cpp](src/hand.cpp)                                  | 80 (WA)   | Week 11   | DT, UF        |
 | [Meereen](tasks/meereen.pdf)                          | [meereen.cpp](src/meereen.cpp)                            | 100       | Week 11   | DP            |
-| [Iron Islands](tasks/iron_islands.pdf)                | [iron_islands.cpp](src/iron_islands.cpp)                  | 50 (TLE)  | Week 12*  | SW?           |
+| [Iron Islands](tasks/iron_islands.pdf)                | [iron_islands.cpp](src/iron_islands.cpp)                  | 100       | Week 12*  | SW            |
 | [Car Sharing](tasks/carsharing.pdf)                   | [carsharing.cpp](src/carsharing.cpp)                      | 100       | Week 12   | MCMF          |
 | [Hong Kong](tasks/hongkong.pdf)                       | [hongkong.cpp](src/hongkong.cpp)                          | 100       | Week 12   | DT, SP        |
 | [India](tasks/india.pdf)                              | [india.cpp](src/india.cpp)                                | 100       | Week 12   | BS & MCMF     |

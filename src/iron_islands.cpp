@@ -1,88 +1,97 @@
 #include <iostream>
 #include <vector>
+#include <map>
+#include <algorithm>
 
 using namespace std;
 
-void solve() {
-    int n, k, w;
+void solve()
+{
+    int n; // number of islands
+    int k; // number of ironborn men at your disposal
+    int w; // number of waterways that start at Pyke
     cin >> n >> k >> w;
 
-    vector<int> c(n);
+    vector<int> c(n); // number of men required to conquer island i
     for (int i = 0; i < n; ++i) {
         cin >> c[i];
     }
 
-    int l, r;
-    vector<vector<int>> ways(w);
+    vector<int> l(w);
+    vector<vector<int>> ways(w); // islands along this waterway
     for (int i = 0; i < w; ++i) {
-        cin >> l;
-        ways[i].reserve(l);
-        for (int j = 0; j < l; ++j) {
-            cin >> r;
-            ways[i].push_back(r);
+        cin >> l[i];
+        ways[i].resize(l[i]);
+        for (int j = 0; j < l[i]; ++j) {
+            cin >> ways[i][j];
         }
     }
+
 
     int best = 0;
 
-    if (w == 1) {
-        int i = 0;
-        int j = 0;
-        int s = ways[0].size();
+    // Find solution for single waterway
+    for (int i = 0; i < w; ++i) {
+        int a = 0;
+        int b = 0;
 
-        int sum = c[ways[0][0]];
+        int sum = c[ways[i][0]];
 
-        while (i < s && j < s) {
+        while (a < l[i] && b < l[i])
+        {
             if (sum == k) {
-                best = max(best, j - i + 1);
+                best = max(best, b - a + 1);
             }
-            if (sum >= k || j == s - 1) {
-                sum -= c[ways[0][i++]];
+
+            // Update window
+            if (sum >= k || b == l[i] - 1) {
+                sum -= c[ways[i][a++]];
             }
             else {
-                sum += c[ways[0][++j]];
+                sum += c[ways[i][++b]];
             }
         }
     }
 
-    for (int w1 = 0; w1 < w; ++w1) {
-        for (int w2 = w1 + 1; w2 < w; ++w2) {
-            int s1 = ways[w1].size();
-            int s2 = ways[w2].size();
-            int s = s1 + s2 - 1;
-            vector<int> path(s);
-            for (int i = s1 - 1; i >= 0; --i) {
-                path[s1 - i - 1] = ways[w1][i];
+    // Find a solution that includes Pyke
+    // Idea:
+    // - compute partial sums for each waterway
+    // - find two sums that together with c[0] equal k
+    map<int, int> sumToDistance;
+    for (int i = 0; i < w; ++i) {
+        // Compute partial sums and
+        vector<int> sums;
+        sums.push_back(0);
+        for (int j = 1; j < l[i]; ++j) {
+            int sum = sums[j - 1] + c[ways[i][j]];
+            if (sum + c[0] >= k) {
+                break; // Sums greater k are irrelevant
             }
-            for (int i = 1; i < s2; ++i) {
-                path[s1 + i - 1] = ways[w2][i];
+            sums.push_back(sum);
+
+            // find occurrences that satisfies diff
+            int diff = k - (sum + c[0]);
+            auto other = sumToDistance.find(diff);
+            if (other != sumToDistance.end()) {
+                best = max(best, j + other->second + 1);
             }
-
-            int i = 0;
-            int j = 0;
-
-            int sum = c[path[0]];
-
-            while (i < s && j < s) {
-                if (sum == k) {
-                    best = max(best, j - i + 1);
-                }
-                if (sum >= k || j == s - 1) {
-                    sum -= c[path[i++]];
-                }
-                else {
-                    sum += c[path[++j]];
-                }
-            }
+        }
+        // Add sums of this waterway to map
+        for (int j = 1; j < sums.size(); ++j) {
+            // If the sum is already in the map, use the larger distance
+            sumToDistance[sums[j]] = max(j, sumToDistance[sums[j]]);
         }
     }
 
     cout << best << endl;
 }
 
-int main() {
-    int t; cin >> t;
-    while (t--) {
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
         solve();
     }
     return 0;
