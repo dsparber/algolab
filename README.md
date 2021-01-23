@@ -13,8 +13,7 @@ make -j8
 
 | Task                                                  | Implementation                                            | Score     | Week      | Topics        | 
 | ----------------------------------------------------- | --------------------------------------------------------- | --------- | --------- | ------------- |
-| [Build the Sum](task
-um.pdf)              | [build_the_sum.cpp](src/build_the_sum.cpp)                | 100       | Week 1    | ---           |
+| [Build the Sum](tasks/build_the_sum.pdf)              | [build_the_sum.cpp](src/build_the_sum.cpp)                | 100       | Week 1    | ---           |
 | [Dominoes](tasks/dominoes.pdf)                        | [dominoes.cpp](src/dominoes.cpp)                          | 100       | Week 1    | ---           |
 | [Even pairs](tasks/deck_of_cards.pdf)                 | [even_pairs.cpp](src/even_pairs.cpp)                      | 100       | Week 1    | ---           |
 | [Even Matrices](tasks/even_matrices.pdf)              | [even_matrices.cpp](src/even_matrices.cpp)                | 80 (TLE)  | Week 1    | ---           |
@@ -37,7 +36,7 @@ um.pdf)              | [build_the_sum.cpp](src/build_the_sum.cpp)               
 | [Boats](tasks/boats.pdf)                              | [boats.cpp](src/boats.cpp)                                | 100       | Week 5    | Greedy        |
 | [Attack of the Clones](tasks/attack_of_the_clones.pdf)| [attack_of_the_clones.cpp](src/attack_of_the_clones.cpp)  | 100       | Week 5    | Greedy        |
 | [San Francisco](tasks/san_francisco.pdf)              | [san_francisco.cpp](src/san_francisco.cpp)                | 100       | Week 5    | DP            |
-| [Asterix the Gaul](tasks/asterix_the_gaul.pdf)        | [asterix_the_gaul.cpp](src/asterix_the_gaul.cpp)          | 60 (TLE)  | Week 5    | Split & List  |
+| [Asterix the Gaul](tasks/asterix_the_gaul.pdf)        | [asterix_the_gaul.cpp](src/asterix_the_gaul.cpp)          | 100       | Week 5    | BS & SL       |
 | [Tracking](tasks/tracking.pdf)                        | [tracking.cpp](src/tracking.cpp)                          | 100       | Week 6*   | SP            |
 | [Shopping Trip](tasks/shopping_trip.pdf)              | [shopping_trip.cpp](src/shopping_trip.cpp)                | 100       | Week 6    | MF            |
 | [Knights](tasks/knights.pdf)                          | [knights.cpp](src/knights.cpp)                            | 100       | Week 6    | MF            |
@@ -97,6 +96,7 @@ um.pdf)              | [build_the_sum.cpp](src/build_the_sum.cpp)               
 - MF: Max. Flow
 - MM: Maximal Matching
 - MST: Minimum Spanning Tree
+- SL: Split & List
 - SP: Shortest Path
 - SW: Sliding Window
 - UF: Union Find

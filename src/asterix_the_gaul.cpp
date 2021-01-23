@@ -9,12 +9,11 @@
 
 using namespace std;
 
-struct MovesDistanceTime {
-  int moves;
+struct DistanceTime {
   long distance;
   long time;
   
-  bool operator<(MovesDistanceTime& other) {
+  bool operator<(const DistanceTime& other) const {
     return time < other.time;
   }
 };
@@ -25,95 +24,106 @@ int m; // amount of magic potion
 long D; // distance to panoramix
 long T; // number of seconds it takes for the romans to reach the druid
 
-vector<int> d; // traversed distance for each move
-vector<int> t; // time required for each move
+vector<long> d; // traversed distance for each move
+vector<long> t; // time required for each move
+vector<long> s; // additional distance covered by every move after taking i gulps
 
 
-void computeMaxDistanceRecursive(int i, int end, int numMoves, long distance, long remainingTime, vector<MovesDistanceTime> &movesDistanceTime) {
+void computeDistanceTimePairs(int i, int end, int gulps, long distance, long remainingTime, vector<DistanceTime> &distanceTime) {
   if (remainingTime <= 0) {
     return;
   }
   
   if (i == end) {
-    if (numMoves != 0) {
-      movesDistanceTime.push_back(MovesDistanceTime({numMoves, distance, T - remainingTime}));
+    if (distance > 0) {
+      distanceTime.push_back({distance, T - remainingTime});
     }
     return;
   }
-  
-  computeMaxDistanceRecursive(i + 1, end, numMoves + 1, distance + d[i], remainingTime - t[i], movesDistanceTime);
-  computeMaxDistanceRecursive(i + 1, end, numMoves, distance, remainingTime, movesDistanceTime);
+
+  // Use move
+  computeDistanceTimePairs(i + 1, end, gulps, distance + d[i] + s[gulps], remainingTime - t[i], distanceTime);
+
+  // Do not use move
+  computeDistanceTimePairs(i + 1, end, gulps, distance, remainingTime, distanceTime);
 }
 
-// Compute the largest distance possible with 0 < i <= n moves
-void computeMaxDistance(int start, int end, map<int, long> &maxDistance) {
+bool isFeasible(int gulps) {
   
   // Split
-  int middle = (start + end) / 2;
-  vector<MovesDistanceTime> movesDistanceTime1;
-  vector<MovesDistanceTime> movesDistanceTime2;
-  computeMaxDistanceRecursive(0, middle, 0, 0, T, movesDistanceTime1);
-  computeMaxDistanceRecursive(middle, n, 0, 0, T, movesDistanceTime2);
+  vector<DistanceTime> distanceTime1;
+  vector<DistanceTime> distanceTime2;
+  computeDistanceTimePairs(0, n / 2, gulps, 0, T, distanceTime1);
+  computeDistanceTimePairs(n / 2, n, gulps, 0, T, distanceTime2);
   
   
-  // Merge
-  sort(movesDistanceTime1.begin(), movesDistanceTime1.end());
-  sort(movesDistanceTime2.begin(), movesDistanceTime2.end());
-  
-  for (auto v : movesDistanceTime1) {
-    maxDistance[v.moves] = max(v.distance, maxDistance[v.moves]);
+  // Sort by time
+  sort(distanceTime1.begin(), distanceTime1.end());
+  sort(distanceTime2.begin(), distanceTime2.end());
+
+  // Replace distance with max-distance for a given time
+  for (int i = 1; i < distanceTime1.size(); ++i) {
+    distanceTime1[i].distance = max(distanceTime1[i - 1].distance, distanceTime1[i].distance);
   }
-  for (auto v : movesDistanceTime2) {
-    maxDistance[v.moves] = max(v.distance, maxDistance[v.moves]);
+  for (int i = 1; i < distanceTime2.size(); ++i) {
+    distanceTime2[i].distance = max(distanceTime2[i - 1].distance, distanceTime2[i].distance);
   }
-  for (auto v1 : movesDistanceTime1) {
-    for (auto v2 : movesDistanceTime2) {
-      if (v1.time + v2.time < T) {
-        maxDistance[v1.moves + v2.moves] = max(v1.distance + v2.distance, maxDistance[v1.moves + v2.moves]);
-      }
-      else {
-        break;
+
+  // The maximal element of a single list is sufficient
+  if (distanceTime1.back().distance >= D || distanceTime2.back().distance >= D) {
+    return true;
+  }
+
+  // Merge both lists
+  for (auto e1 : distanceTime1) {
+
+    // Binary search in second list
+    int a = 0;
+    int b = distanceTime2.size() - 1;
+
+    while (a != b) {
+      int middle = (a + b + 1) / 2;
+
+      auto e2 = distanceTime2[middle];
+
+      if (e1.time + e2.time < T) {
+        a = middle;
+      } else {
+        b = middle - 1;
       }
     }
+    auto e2 = distanceTime2[a];
+
+    // The combination is feasible
+    if (e1.time + e2.time < T && e1.distance + e2.distance >= D) {
+      return true;
+    }
   }
-  
+  return false;
 }
 
 void solve() {
 
   cin >> n >> m >> D >> T;
   
-  d = vector<int>(n);
-  t = vector<int>(n);
+  d = vector<long>(n);
+  t = vector<long>(n);
   for (int i = 0; i < n; ++i) {
     cin >> d[i] >> t[i];
   }
-  vector<int> s(m + 2); // additional distance covered by every move after taking i gulps
+  s = vector<long>(m + 2);
   for (int i = 1; i <= m; ++i) {
     cin >> s[i]; 
   }
-  
-  // Compute the largest distance possible with 0 < i <= n moves
-  map<int, long> maxDistance;
-  computeMaxDistance(0, n, maxDistance);
 
+  // Binary search over number of gulps
   int a = 0;
   int b = m + 1;
 
   while (a != b) {
     int gulps = (a + b) / 2;
 
-    bool isFeasible = false;
-    for (auto d : maxDistance) {
-      int numMoves = d.first;
-      long distance = d.second;
-      if (distance + s[gulps] * numMoves >= D) {
-        isFeasible = true;
-        break;
-      }
-    }
-
-    if (isFeasible) {
+    if (isFeasible(gulps)) {
       b = gulps;
     }
     else {
