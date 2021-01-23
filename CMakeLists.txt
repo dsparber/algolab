@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 14)
 
 find_package(CGAL)
 
+
 # Week 1
 add_executable(build_the_sum src/build_the_sum.cpp)
 add_executable(dominoes src/dominoes.cpp)
@@ -19,13 +20,6 @@ add_executable(beach_bars src/beach_bars.cpp)
 add_executable(search_snippets src/search_snippets.cpp)
 
 
-# Week 2
-add_executable(ant_challenge src/ant_challenge.cpp)
-add_executable(important_bridges src/important_bridges.cpp)
-add_executable(first_steps src/first_steps.cpp)
-add_executable(buddy_selection src/buddy_selection.cpp)
-
-
 # Week 3
 add_executable(hit src/hit.cpp)
 add_executable(first_hit src/first_hit.cpp)
@@ -34,10 +28,24 @@ add_executable(hiking_maps src/hiking_maps.cpp)
 
 
 # Week 4
+add_executable(ant_challenge src/ant_challenge.cpp)
+add_executable(important_bridges src/important_bridges.cpp)
+add_executable(first_steps src/first_steps.cpp)
+add_executable(buddy_selection src/buddy_selection.cpp)
+
+
+# Week 5
 add_executable(attack_of_the_clones src/attack_of_the_clones.cpp)
 add_executable(san_francisco src/san_francisco.cpp)
 add_executable(boats src/boats.cpp)
 add_executable(asterix_the_gaul src/asterix_the_gaul.cpp)
+
+
+# Week 6
+add_executable(shopping_trip src/shopping_trip.cpp)
+add_executable(tiles src/tiles.cpp)
+add_executable(knights src/knights.cpp)
+add_executable(kingdom_defence src/kingdom_defence.cpp)
 
 
 # Week 7
