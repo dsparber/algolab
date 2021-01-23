@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int testcase() {
+int solve() {
   int n; cin >> n;
   int sum = 0;
   int even = 0;
@@ -19,7 +19,7 @@ int testcase() {
 int main() {
   int t; cin >> t;
   for (int i = 0; i < t; ++i) {
-    int solution = testcase();
+    int solution = solve();
     cout << solution << endl;
   }
 }

@@ -16,7 +16,7 @@ make -j8
 | [Build the Sum](tasks/build_the_sum.pdf)              | [build_the_sum.cpp](src/build_the_sum.cpp)                | 100       | Week 1    | ---           |
 | [Dominoes](tasks/dominoes.pdf)                        | [dominoes.cpp](src/dominoes.cpp)                          | 100       | Week 1    | ---           |
 | [Even pairs](tasks/deck_of_cards.pdf)                 | [even_pairs.cpp](src/even_pairs.cpp)                      | 100       | Week 1    | ---           |
-| [Even Matrices](tasks/even_matrices.pdf)              | [even_matrices.cpp](src/even_matrices.cpp)                | 80 (TLE)  | Week 1    | ---           |
+| [Even Matrices](tasks/even_matrices.pdf)              | [even_matrices.cpp](src/even_matrices.cpp)                | 100       | Week 1    | ---           |
 | [Deck of Cards](tasks/deck_of_cards.pdf)              | [deck_of_cards.cpp](src/deck_of_cards.cpp)                | 100       | Week 2*   | DP            |
 | [Burning Coins](tasks/burning_coins.pdf)              | [burning_coins.cpp](src/burning_coins.cpp)                | 100       | Week 2    | DP            |
 | [The Great Game](tasks/the_great_game.pdf)            | [the_great_game.cpp](src/the_great_game.cpp)              | 100       | Week 2    | DP            |

@@ -3,7 +3,7 @@
 #include <cmath>
 using namespace std;
 
-int testcase() {
+int solve() {
   int n; cin >> n;
   int max_index; cin >> max_index;
   for (int i = 1; i < n; ++i) {
@@ -23,7 +23,7 @@ int testcase() {
 int main() {
   int t; cin >> t;
   for (int i = 0; i < t; ++i) {
-    int solution = testcase();
+    int solution = solve();
     cout << solution << endl;
   }
 }
