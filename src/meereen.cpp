@@ -6,144 +6,117 @@
 
 using namespace std;
 
-int n; // Number of fighters
-int k; // Number of different types of fighters, 2 <= k <= 4
-int m; // Number of fighters the audience can remember, 2 <= m <= 3
+int mask;
+int differenceOffset = 12;
 
-bool debug = false;
+struct Queue
+{
+  int a, b, c;
 
-struct queue {
-  vector<int> q;
-
-  bool operator==(const queue &other) const {
-    for (int i = 0; i < q.size(); ++i) {
-      if (q[i] != other.q[i]) {
-        return false;        
-      }
-    }
-    return true; 
-  }
-  
-  bool operator<(const queue &other) const {
-    for (int i = 0; i < q.size(); ++i) {
-      if (q[i] < other.q[i]) {
-        return true;
-      }
-      if (q[i] > other.q[i]) {
-        return false;
-      }
-    }
-    return false; 
-  }
-  
-  queue insert(int type) {
-    vector<int> qNew(m);
-    qNew[0] = type; 
-    for (int i = 1; i < m; ++i) {
-      qNew[i] = q[i - 1];
-    }
-    return {qNew};
-  }
-  
+  // Count the number of distinct elements in the queue
   int numDistinct() {
-    set<int> distinct;
-    for (int type : q) {
-      if (type != -1) {
-        distinct.insert(type);
-      }
-    }
-    return distinct.size();
+    set<int> abc = {0, a, b, c};
+    return abc.size() - 1;
+  }
+
+  // Insert a new value and return a new queue
+  Queue insert(int value) {
+    return {value, a, b};
+  }
+
+  // Encode as int
+  int encode() const {
+    return a + (b << 3) + (c << 6);
   }
 };
 
-struct state {
-  queue q1, q2;
-  int deltaPQ;
+// Decode a queue from an integer value
+Queue decodeQueue(int value) {
+  int a = value & 7;
+  int b = (value >> 3) & 7;
+  int c = 0; // We do not save the last element
+  return {a, b, c};
+}
 
-  bool operator<(const state &s2) const {
-    queue q1Min = min(q1, q2);
-    queue q1Max = max(q1, q2);
-    queue q2Min = min(s2.q1, s2.q2);
-    queue q2Max = max(s2.q1, s2.q2);
-    return q1Min < q2Min || (q1Min == q2Min && q1Max < q2Max) || (q1Min == q2Min && q1Max == q2Max && abs(deltaPQ) < abs(s2.deltaPQ)); 
+
+struct State {
+  Queue north;
+  Queue south;
+  int difference;
+
+  // Encode as int
+  int encode() const {
+    return ((difference + differenceOffset) << 18) + ((south.encode() & mask) << 9) + (north.encode() & mask);
   }
-  
-  state insertLeft(int type) {
-    return {q1.insert(type), q2, deltaPQ - 1};
-  }
-  state insertRight(int type) {
-    return {q1, q2.insert(type), deltaPQ + 1};
-  }
-  
-  int scoreLeft() {
-    return 1000 * q1.numDistinct() - int(pow(2, abs(deltaPQ)));
-  }
-  int scoreRight() {
-    return 1000 * q2.numDistinct() - int(pow(2, abs(deltaPQ)));
+
+  // Compute the score for a given queue
+  int computeScore(bool useNorth) {
+    int numDistinct = useNorth ? north.numDistinct() : south.numDistinct();
+    return numDistinct * 1000 - int(pow(2, abs(difference)));
   }
 };
+
+// Decode a state from an integer value
+State decodeState(int value) {
+  int north = value & mask;
+  int south = (value >> 9) & mask;
+  int difference = (value >> 18) - differenceOffset;
+  return {decodeQueue(north), decodeQueue(south), difference};
+}
+
+// Insert a state into the states map if the score is positive
+void insertOrUpdate(State state, int score, int prevScore, map<int, int> &states) {
+  if (score < 0) {
+    return;
+  }
+  int encoded = state.encode();
+  states[encoded] = max(prevScore + score, states[encoded]);
+}
 
 void solve() {
 
-  
+  int n; // Number of fighters
+  int k; // Number of different types of fighters, 2 <= k <= 4
+  int m; // Number of fighters the audience can remember, 2 <= m <= 3
   cin >> n >> k >> m;
   
-  vector<int> q(n); // Queue of fighters
+  vector<int> fighters(n); // Queue of fighters
   for (int i = 0; i < n; ++i) {
-    cin >> q[i];
+    cin >> fighters[i];
+    fighters[i]++; // Offset type by one to reserve 0 for empty
   }
   
+  int b = 3 * (m - 1); // Number of bits needed to encode a queue
+  mask = (1 << b) - 1; // In binary: '1' repeated b times
+
   
-  state empty = {{vector<int>(m, -1)}, {vector<int>(m, -1)}, 0};
+  State initalState = {{0, 0, 0}, {0, 0, 0}, 0};
   
-  map<state, int> states;
+  map<int, int> currentStates;
+  currentStates[initalState.encode()] = 0;
   
-  states[empty] = 0;
-  
-  for (int i = 0; i < n; ++i) {
-    map<state, int> newStates;
-    for (auto entry : states) {
-      state s0 = entry.first;
+  for (int fighter : fighters) {
+    map<int, int> nextStates;
+    for (auto entry : currentStates) {
       int score = entry.second;
-      
-      state s1 = s0.insertLeft(q[i]);
-      int s1Score = s1.scoreLeft();
-      if (s1Score >= 0) {
-        if (newStates.find(s1) == newStates.end() && newStates.find(s1)->second < score + s1Score) {
-            newStates[s1] = score + s1Score;
-        }  
-      }
-      
-      s1 = s0.insertRight(q[i]);
-      s1Score = s1.scoreRight();
-      if (s1Score >= 0) {
-        if (newStates.find(s1) == newStates.end() && newStates.find(s1)->second < score + s1Score) {
-            newStates[s1] = score + s1Score;
-        }  
-      }
+      auto state = decodeState(entry.first);
+
+      State nextNorth = {state.north.insert(fighter), state.south, state.difference - 1};
+      State nextSouth = {state.north, state.south.insert(fighter), state.difference + 1};
+
+      int scoreNorth = nextNorth.computeScore(true);
+      int scoreSouth = nextSouth.computeScore(false);
+
+      insertOrUpdate(nextNorth, scoreNorth, score, nextStates);
+      insertOrUpdate(nextSouth, scoreSouth, score, nextStates);
     }
-    states = newStates;
-    
-    if (debug) {
-      cout << "i = " << i << ", q[i] = " << q[i]  << ":" << endl;
-      for (auto entry : states) {
-        cout << "  left =";
-        for (int v : entry.first.q1.q) {
-          cout << " " << v;
-        }
-        cout << ", right =";
-        for (int v : entry.first.q2.q) {
-          cout << " " << v;
-        }
-        cout << ", deltaPQ = " << entry.first.deltaPQ << ", score = " << entry.second << endl;
-      }
-    }
+    currentStates = nextStates;
   }
   
   
-  // Find max value on diagonal
+  // Find max value
   int maxValue = -1;
-  for (auto entry : states) {
+  for (auto entry : currentStates) {
     maxValue = max(entry.second, maxValue);
   }
   

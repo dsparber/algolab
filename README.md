@@ -66,7 +66,7 @@ make -j8
 | [Return of the Jedi](tasks/return_of_the_jedi.pdf)    | [return_of_the_jedi.cpp](src/return_of_the_jedi.cpp)      | 100       | Week 11   | 2nd best MST  |
 | [Lestrade](tasks/lestrade.pdf)                        | [lestrade.cpp](src/lestrade.cpp)                          | 100       | Week 11   | LP & DT       |
 | [Hand](tasks/hand.pdf)                                | [hand.cpp](src/hand.cpp)                                  | 80 (WA)   | Week 11   | DT, UF        |
-| [Meereen](tasks/meereen.pdf)                          | ---                                                       | ---       | Week 11   | ---           |
+| [Meereen](tasks/meereen.pdf)                          | [meereen.cpp](src/meereen.cpp)                            | 100       | Week 11   | DP            |
 | [Iron Islands](tasks/iron_islands.pdf)                | [iron_islands.cpp](src/iron_islands.cpp)                  | 50 (TLE)  | Week 12*  | SW?           |
 | [Car Sharing](tasks/carsharing.pdf)                   | [carsharing.cpp](src/carsharing.cpp)                      | 100       | Week 12   | MCMF          |
 | [Hong Kong](tasks/hongkong.pdf)                       | ---                                                       | ---       | Week 12   | ---           |
