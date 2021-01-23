@@ -8,8 +8,6 @@
 #include <CGAL/Triangulation_face_base_2.h>
 #include <boost/graph/adjacency_list.hpp>
 #include <boost/pending/disjoint_sets.hpp>
-#include <boost/graph/connected_components.hpp>
-#include <boost/graph/kruskal_min_spanning_tree.hpp>
 
 typedef CGAL::Exact_predicates_inexact_constructions_kernel K;
 typedef int                                            Index;
@@ -29,7 +27,7 @@ struct Edge {
   int u, v;
   long w;
   
-  bool operator<(Edge e) {
+  bool operator<(Edge e) const {
     return w < e.w;
   }
 };
@@ -97,7 +95,7 @@ void solve() {
   Index n_components = n;
   vector<int> sizeOfComponent(n, 1);
   vector<int> componentsOfSize(k + 1, 0);
-  int s = -1;
+  long s = -1;
   int f = -1;
   componentsOfSize[1] = n;
   vector<long> squaredDistances;
@@ -119,7 +117,7 @@ void solve() {
       
       uf.link(c1, c2);
       int c = uf.find_set(c1);
-      
+
       componentsOfSize[sizeOfComponent[c1]] -= 1;
       componentsOfSize[sizeOfComponent[c2]] -= 1;
       sizeOfComponent[c] = min(k, sizeOfComponent[c1] + sizeOfComponent[c2]);
@@ -131,8 +129,7 @@ void solve() {
   int fMax = maxFamilies(componentsOfSize, k);
   f = max(f, fMax);
   
-  cout << squaredDistances[n - f0] << " " << f << endl;
-  // squaredDistances[n - f0]
+  cout << s << " " << f << endl;
 }
 
 

@@ -26,6 +26,11 @@ add_executable(first_hit src/first_hit.cpp)
 add_executable(antenna src/antenna.cpp)
 add_executable(hiking_maps src/hiking_maps.cpp)
 
+target_link_libraries(hit CGAL::CGAL)
+target_link_libraries(first_hit CGAL::CGAL)
+target_link_libraries(antenna CGAL::CGAL)
+target_link_libraries(hiking_maps CGAL::CGAL)
+
 
 # Week 4
 add_executable(ant_challenge src/ant_challenge.cpp)
@@ -94,6 +99,7 @@ add_executable(lestrade src/lestrade.cpp)
 add_executable(hand src/hand.cpp)
 add_executable(meereen src/meereen.cpp)
 
+target_link_libraries(hand CGAL::CGAL)
 target_link_libraries(lestrade CGAL::CGAL)
 
 

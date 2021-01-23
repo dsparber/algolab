@@ -24,7 +24,7 @@ make -j8
 | [Search Snippets](tasks/search_snippets.pdf)          | [search_snippets.cpp](src/search_snippets.cpp)            | 100       | Week 2    | SW            |
 | [Russia](tasks/russia.pdf)                            | [russia.cpp](src/russia_official_solution.cpp)            | 100       | Week 3*   | DP            |
 | [Hit](tasks/hit.pdf)                                  | [hit.cpp](src/hit.cpp)                                    | 100       | Week 3    | Geo           |
-| [First Hit](tasks/first_hit.pdf)                      | [first_hit.cpp](src/first_hit.cpp)                        | 90 (TLE)  | Week 3    | Geo           |
+| [First Hit](tasks/first_hit.pdf)                      | [first_hit.cpp](src/first_hit.cpp)                        | 100       | Week 3    | Geo           |
 | [Antenna](tasks/antenna.pdf)                          | [antenna.cpp](src/antenna.cpp)                            | 100       | Week 3    | Geo           |
 | [Hiking Maps](tasks/hiking_maps.pdf)                  | [hiking_maps.cpp](src/hiking_maps.cpp)                    | 100       | Week 3    | Geo           |
 | [Defensive Line](tasks/defensive_line.pdf)            | [defensive_line.cpp](src/defensive_line.cpp)              | 100       | Week 4*   | SW & DP       |
@@ -65,7 +65,7 @@ make -j8
 | [Fleet Race](tasks/fleetrace.pdf)                     | [fleetrace.cpp](src/fleetrace.cpp)                        | 100       | Week 11*  | MCMF          |
 | [Return of the Jedi](tasks/return_of_the_jedi.pdf)    | [return_of_the_jedi.cpp](src/return_of_the_jedi.cpp)      | 100       | Week 11   | 2nd best MST  |
 | [Lestrade](tasks/lestrade.pdf)                        | [lestrade.cpp](src/lestrade.cpp)                          | 100       | Week 11   | LP & DT       |
-| [Hand](tasks/hand.pdf)                                | [hand.cpp](src/hand.cpp)                                  | 80 (WA)   | Week 11   | DT, UF        |
+| [Hand](tasks/hand.pdf)                                | [hand.cpp](src/hand.cpp)                                  | 100       | Week 11   | DT, UF        |
 | [Meereen](tasks/meereen.pdf)                          | [meereen.cpp](src/meereen.cpp)                            | 100       | Week 11   | DP            |
 | [Iron Islands](tasks/iron_islands.pdf)                | [iron_islands.cpp](src/iron_islands.cpp)                  | 100       | Week 12*  | SW            |
 | [Car Sharing](tasks/carsharing.pdf)                   | [carsharing.cpp](src/carsharing.cpp)                      | 100       | Week 12   | MCMF          |
