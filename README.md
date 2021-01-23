@@ -69,7 +69,7 @@ make -j8
 | [Meereen](tasks/meereen.pdf)                          | [meereen.cpp](src/meereen.cpp)                            | 100       | Week 11   | DP            |
 | [Iron Islands](tasks/iron_islands.pdf)                | [iron_islands.cpp](src/iron_islands.cpp)                  | 50 (TLE)  | Week 12*  | SW?           |
 | [Car Sharing](tasks/carsharing.pdf)                   | [carsharing.cpp](src/carsharing.cpp)                      | 100       | Week 12   | MCMF          |
-| [Hong Kong](tasks/hongkong.pdf)                       | ---                                                       | ---       | Week 12   | ---           |
+| [Hong Kong](tasks/hongkong.pdf)                       | [hongkong.cpp](src/hongkong.cpp)                          | 100       | Week 12   | DT, SP        |
 | [India](tasks/india.pdf)                              | [india.cpp](src/india.cpp)                                | 100       | Week 12   | BS & MCMF     |
 | [Moving Books](tasks/moving_books.pdf)                | [moving_books.cpp](src/moving_books.cpp)                  | 100       | Week 12   | Greedy        |
 | [Lannister](tasks/lannister.pdf)                      | [lannister.cpp](src/lannister.cpp)                        | 100       | Week 13*  | LP            |
