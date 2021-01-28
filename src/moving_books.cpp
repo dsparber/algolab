@@ -7,7 +7,7 @@ using namespace std;
 // Strategy:
 // Sort strengths and weights in ascending order
 // For i = 1..n:
-//  - Take all boxes that are to heavy for everyone before, but not too heavy for person i
+//  - Take all boxes that are too heavy for everyone before, but not too heavy for person i
 //  - If person i carries less than the person carrying the most, take over boxes
 void solve() {
   int n, m;
